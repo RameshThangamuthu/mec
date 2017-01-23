@@ -1,7 +1,7 @@
 node("docker") {
-    docker.withRegistry('https://hub.docker.com/u/rameshthangamuthu/edgepoc', '<<your-docker-registry-credentials-id>>') {
+    docker.withRegistry('https://hub.docker.com/u/rameshthangamuthu/edgepoc', 'DockerHub') {
     
-        git url: "https://github.com/RameshThangamuthu/mec", credentialsId: '<<your-git-credentials-id>>'
+        git url: "https://github.com/RameshThangamuthu/mec", credentialsId: 'GitHub'
     
         sh "git rev-parse HEAD > .git/commit-id"
         def commit_id = readFile('.git/commit-id').trim()
